@@ -1,14 +1,22 @@
 body {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid red;
-    height: 100vh;
+    height: 99vh;
 }
 
 #gameBoardDiv {
-    border: 1px solid black;
-    height: 50px;
-    width: 50px;
+    border: 2px solid black;
+    height: 500px;
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     
+}
+
+.cell {
+    border: 2px solid green;
 }
