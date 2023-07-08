@@ -17,5 +17,19 @@ const createPlayer = (name, sign) => {
 const player1 = createPlayer("Sam", "X");
 const player2 = createPlayer("Jimmy Neutron", "O");
 
-// Creating a function to render the board to the page
+// Initializing the gameBoardDiv
+
+const gameBoardDiv = document.querySelector("#gameBoardDiv");
+
+// Creating a function to render the board contents to the gameBoardDiv
+gameBoard.board.forEach(element => {
+    const gameButton = document.createElement("button");
+    gameButton.classList.add("cell")
+    gameButton.innerHTML = element;
+    gameBoardDiv.appendChild(gameButton);
+})
+
+// const spots = Array.from(document.getElementsByClassName("cell"))
+
+
 
