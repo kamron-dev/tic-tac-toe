@@ -19,4 +19,5 @@ body {
 
 .cell {
     border: 2px solid green;
+    font-size: 2rem;
 }
