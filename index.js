@@ -20,6 +20,11 @@ const player2 = createPlayer("Jimmy Neutron", "O");
 const renderGame = (() => {
     // Initializing the gameBoardDiv
     const gameBoardDiv = document.querySelector("#gameBoardDiv");
+    let currentPlayer = player1;
+
+    const switchPlayer = () => {
+        currentPlayer === player1 ? currentPlayer = player2 : currentPlayer === player2 ? currentPlayer = player1 : null;
+    }
     
     // Creating a function to render the board contents to the gameBoardDiv
     gameBoard.board.forEach((element, index) => {
@@ -29,21 +34,15 @@ const renderGame = (() => {
         gameBoardDiv.appendChild(gameButton);
 
         gameButton.addEventListener("click", (e) => {
-            e.target.innerHTML = player1.sign;
-            gameBoard.board[index] = player1.sign;
-            //switchPlayer(); TO DO!!
+            e.target.innerHTML = currentPlayer.sign;
+            gameBoard.board[index] = currentPlayer.sign;
+            switchPlayer();
+            
             //checkWin(); TO DO!!
         })
     });
 
-    // const spots = Array.from(document.getElementsByClassName("cell"))
-    // spots.forEach(spot => {
-    //     spot.addEventListener("click", () => {
-    //         spot.textContent = player1.sign;
-            
-            
-    //     })
-    // })
+    
     
 })();
 
