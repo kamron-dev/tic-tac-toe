@@ -40,3 +40,14 @@ button:disabled {
 button:hover {
     background-color: ghostwhite;
 }
+
+#restartGame {
+    position: absolute;
+    top: 90vh;
+    width: 8.5rem;
+    height: 3.5rem;
+    font-family: Pangolin, sans-serif;
+    font-size: 2rem;
+    border: 1px solid white;
+    border-radius: 5px;
+}
