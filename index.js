@@ -19,6 +19,7 @@ const player2 = createPlayer("Jimmy Neutron", "O");
 const renderGame = (() => {
     // Initializing the gameBoardDiv
     const gameBoardDiv = document.querySelector("#gameBoardDiv");
+    const display = document.querySelector("#display");
     let currentPlayer = player1;
 
     // functions to use inside of the game "switchPLayer" and "checkWin"
@@ -46,7 +47,8 @@ const renderGame = (() => {
     const endGame = (currentPlayer) => {
         const allButtons = document.querySelectorAll(".cell");
         allButtons.forEach(button => button.setAttribute("disabled", ""));
-        return console.log(`${currentPlayer.name} won the game!`);
+        
+        display.innerHTML = `${currentPlayer.name} won the game!`;
     }
     
     // Creating a function to render the board contents to the gameBoardDiv

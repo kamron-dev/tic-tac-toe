@@ -17,12 +17,19 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    font-family: Pangolin, sans-serif;
+    
+    
 }
-
+#display {
+    position: absolute;
+    top: -15px;
+    font-size: 3rem;
+}
 .cell {
     border: 2px solid green;
     font-size: 2.8rem;
+    font-family: Pangolin, sans-serif;
+    
 }
 
 button:disabled {
