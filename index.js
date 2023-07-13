@@ -26,13 +26,16 @@ const renderGame = (() => {
         currentPlayer === player1 ? currentPlayer = player2 : currentPlayer === player2 ? currentPlayer = player1 : null;
     }
 
-    const checkWin = () => {
+    const checkWin = (currentPlayer) => {
         const winningCombinations = [
             [0, 1, 2], [3, 4, 5], [6, 7, 8], //horizontal
             [0, 3, 6], [1, 4, 7], [2, 5, 8], //vertical
             [0, 4, 8], [2, 4, 6] // diagonal
         
         ]
+        return winningCombinations.some(combination => {
+            return combination.every(index => gameBoard.board[index] === currentPlayer.sign);
+        });
     }
     
     // Creating a function to render the board contents to the gameBoardDiv
@@ -46,10 +49,12 @@ const renderGame = (() => {
         gameButton.addEventListener("click", function hanldeButtons(e) {
             e.target.innerHTML = currentPlayer.sign;
             gameBoard.board[index] = currentPlayer.sign;
-            switchPlayer();
             gameButton.setAttribute("disabled", "");
-
+            if (checkWin(currentPlayer)) return console.log(`${currentPlayer.name} won the game!`)
+            
             //checkWin(); TO DO!!
+            //checkDraw(); TO DO!!
+            switchPlayer();
             
         })
         
