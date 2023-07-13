@@ -55,8 +55,7 @@ const renderGame = (() => {
             gameBoard.board[index] = currentPlayer.sign;
             gameButton.setAttribute("disabled", "");
             if (checkWin(currentPlayer)) return console.log(`${currentPlayer.name} won the game!`);
-            if (checkDraw()) return console.log("It is a draw!");
-            //checkDraw(); TO DO!!
+            if (checkDraw()) return console.log("It is a tie!");
             switchPlayer();
             
         })
