@@ -24,7 +24,7 @@ const renderGame = (() => {
     // functions to use inside of the game "switchPLayer" and "checkWin"
     const switchPlayer = () => {
         currentPlayer === player1 ? currentPlayer = player2 : currentPlayer === player2 ? currentPlayer = player1 : null;
-    }
+    };
 
     const checkWin = (currentPlayer) => {
         const winningCombinations = [
@@ -36,6 +36,10 @@ const renderGame = (() => {
         return winningCombinations.some(combination => {
             return combination.every(index => gameBoard.board[index] === currentPlayer.sign);
         });
+    };
+
+    const checkDraw = () => {
+        return gameBoard.board.every(cell => cell !== "");
     }
     
     // Creating a function to render the board contents to the gameBoardDiv
@@ -50,9 +54,8 @@ const renderGame = (() => {
             e.target.innerHTML = currentPlayer.sign;
             gameBoard.board[index] = currentPlayer.sign;
             gameButton.setAttribute("disabled", "");
-            if (checkWin(currentPlayer)) return console.log(`${currentPlayer.name} won the game!`)
-            
-            //checkWin(); TO DO!!
+            if (checkWin(currentPlayer)) return console.log(`${currentPlayer.name} won the game!`);
+            if (checkDraw()) return console.log("It is a draw!");
             //checkDraw(); TO DO!!
             switchPlayer();
             
