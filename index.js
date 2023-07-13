@@ -40,6 +40,10 @@ const renderGame = (() => {
 
     const checkDraw = () => {
         return gameBoard.board.every(cell => cell !== "");
+    };
+
+    const endGame = (currentPlayer) => {
+        return console.log(`${currentPlayer.name} won the game!`);
     }
     
     // Creating a function to render the board contents to the gameBoardDiv
@@ -54,7 +58,7 @@ const renderGame = (() => {
             e.target.innerHTML = currentPlayer.sign;
             gameBoard.board[index] = currentPlayer.sign;
             gameButton.setAttribute("disabled", "");
-            if (checkWin(currentPlayer)) return console.log(`${currentPlayer.name} won the game!`);
+            if (checkWin(currentPlayer)) return endGame(currentPlayer);
             if (checkDraw()) return console.log("It is a tie!");
             switchPlayer();
             
