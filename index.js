@@ -39,10 +39,13 @@ const renderGame = (() => {
     };
 
     const checkDraw = () => {
+
         return gameBoard.board.every(cell => cell !== "");
     };
 
     const endGame = (currentPlayer) => {
+        const allButtons = document.querySelectorAll(".cell");
+        allButtons.forEach(button => button.setAttribute("disabled", ""));
         return console.log(`${currentPlayer.name} won the game!`);
     }
     
