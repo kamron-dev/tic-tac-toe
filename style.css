@@ -26,8 +26,8 @@ body {
     font-size: 3rem;
 }
 .cell {
-    border: 2px solid green;
-    font-size: 2.8rem;
+    border: 2px solid black;
+    font-size: 4.8rem;
     font-family: Pangolin, sans-serif;
     
 }
@@ -39,6 +39,7 @@ button:disabled {
 
 button:hover {
     background-color: ghostwhite;
+    
 }
 
 #restartGame {

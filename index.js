@@ -13,8 +13,8 @@ const createPlayer = (name, sign) => {
 
 // Initializing players through player factory function
 
-const player1 = createPlayer("Sam", "X");
-const player2 = createPlayer("Jimmy Neutron", "O");
+const player1 = createPlayer("Player 1", "X");
+const player2 = createPlayer("Player 2", "O");
 
 const renderGame = (() => {
     // Initializing the gameBoardDiv
