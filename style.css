@@ -21,3 +21,8 @@ body {
     border: 2px solid green;
     font-size: 2rem;
 }
+
+button:disabled {
+    color: black;
+    background-color: white;
+}
