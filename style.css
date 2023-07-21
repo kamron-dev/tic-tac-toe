@@ -12,8 +12,8 @@ body {
 
 #gameBoardDiv {
     border: 2px solid black;
-    height: 500px;
-    width: 500px;
+    height: 30rem;
+    width: 30rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -22,7 +22,7 @@ body {
 }
 #display {
     position: absolute;
-    top: -15px;
+    top: -0.8rem;
     font-size: 3rem;
 }
 .cell {
@@ -50,5 +50,5 @@ button:hover {
     font-family: Pangolin, sans-serif;
     font-size: 2rem;
     border: 1px solid white;
-    border-radius: 5px;
+    border-radius: 1rem;
 }
